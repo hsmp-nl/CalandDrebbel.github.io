@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CALANDDREBBEL BBQ/STRAATFEEST - Home</title>
+  <link rel="icon" href="https://i.imgur.com/JobDEVg.png" type="image/gif" >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <p id="popup-message"></p>
+    </div>
+  </div>
+  <section class="main">
+    <div class="hero-image">
+      <img src="https://i.imgur.com/TA6miFc.jpg" alt="BBQ">
+    </div>
+    <div class="hero-text">
+      <div class="logo-img">
+        <img src="https://i.imgur.com/9cFj3As.png" alt="BBQ">
+      </div>
+    <div class="datum-text">
+      <h2>Zaterdag 15 Juli</h2>
+      <a href="#about" class="btn" data-target="about">Meld je nu aan</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-text">
+      <h2>Informatie</h2>
+      <div class="about-text">
+        <p>Op zaterdag 15 juli...</p>
+        <p>Vieren we het jaarlijkse Calanddrebbel Straatfeest met een gezellige BBQ! Het begint om 16.30 uur met een borrel, gevolgd door een heerlijke BBQ. We zorgen voor smakelijk eten, zoals sappige hamburgers, gegrilde groenten en lekkere salades. Het feest duurt tot 23.00 uur, waarna we samen opruimen. Breng je eigen meubilair mee en zorg ervoor dat de kinderen plastic borden en bestek hebben. Meld je vóór 1 juli aan via e-mail en kom genieten van goed gezelschap en lekker eten op het Calanddrebbel Straatfeest!</p>
+      </div>
+      <a href="#features" class="btn" data-target="features">Het Programma!</a>
+    </div>
+    <div class="about-img">
+      <img src="https://i.imgur.com/iiyuxlL.jpg" alt="BBQ">
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <h2>Het Programma:</h2>
+    <div class="feature-row">
+      <div class="feature-box">
+        <div class="slide">
+          <img src="https://i.imgur.com/sadDxt1.jpg" alt="BBQ">
+        </div>
+        <h3>16:30 - Borrel</h3>
+        <p>Om 16.30 uur begint het Calanddrebbel Straatfeest met een gezellige borrel. Ontmoet elkaar, praat bij en geniet van de ontspannen sfeer.</p>
+      </div>
+      <div class="feature-box">
+        <div class="slide">
+          <img src="https://i.imgur.com/W0iEZV9.jpg" alt="BBQ">
+        </div>
+        <h3>18:00 - BBQ</h3>
+        <p>Om 18.00 uur is het tijd voor de langverwachte BBQ. Proef heerlijk gegrild eten, zoals hamburgers, groenten en salades. Geniet van het eten en de gezelligheid met je buren.</p>
+      </div>
+      <div class="feature-box">
+        <div class="slide">
+          <img src="https://i.imgur.com/Ej419W1.jpg" alt="BBQ">
+        </div>
+        <h3>23:00 - Opruimen</h3>
+        <p>Om 23.00 uur is het opruimtijd. Samen zorgen we ervoor dat de straten weer netjes zijn. Samenwerken maakt het opruimen gezelliger. Bedankt voor je inzet!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="meer" id="meer">
+    <div class="about-text">
+      <h2>IK WIL ME AANMELDEN!</h2>
+      <h1>Maar hoe?</h1>
+      <h1>ㅤㅤㅤㅤㅤ</h1>
+      <section class="aanmelden">
+        <div class="about-text"></div>
+        <form id="contact-form" action="" method="POST" onsubmit="sendEmail(event)">
+          <div class="form-row">
+            <label for="voornaam">Voornaam:</label>
+            <input class="voornaam" type="text" id="voornaam" name="voornaam" placeholder="Vul hier je Voornaam in..." required>
+          </div>
+    
+          <div class="form-row">
+            <label for="achternaam">Achternaam:</label>
+            <input class="achternaam" type="text" id="achternaam" name="achternaam" placeholder="Vul hier je Achternaam in..." required>
+          </div>
+    
+          <div class="form-row">
+            <label for="email">E-mailadres:</label>
+            <input class="email" type="email" id="email" name="email" placeholder="Vul hier je E-mailadres in..." required>
+          </div>
+    
+          <div class="form-row">
+            <label for="straat">Straat:</label>
+            <select class="straat" id="straat" name="straat" required>
+              <option value="Calandstraat">Calandstraat</option>
+              <option value="Cornelis_drebbelstraat">Cornelis Drebbelstraat</option>
+            </select>
+          </div>
+    
+          <div class="form-row">
+            <label for="huisnummer">Huisnummer:</label>
+            <input class="huisnummer" type="text" id="huisnummer" name="huisnummer" placeholder="Huisnummer van de Cornelis Drebbelstraat aan de andere kant van de calandstraat zijn niet geldig..." required>
+          </div>
+    
+          <div class="form-row">
+            <label for="aantal_volwassenen">Aantal volwassenen:</label>
+            <div class="number-input">
+              <button type="button" onclick="decreaseValue('aantal_volwassenen')">-</button>
+              <input class="aantal_volwassenen" type="number" id="aantal_volwassenen" name="aantal_volwassenen" value="0" min="0" max="10" required>
+              <button type="button" onclick="increaseValue('aantal_volwassenen')">+</button>
+            </div>
+          </div>
+    
+          <div class="form-row">
+            <label for="aantal_kinderen">Aantal kinderen:</label>
+            <div class="number-input">
+              <button type="button" onclick="decreaseValue('aantal_kinderen')">-</button>
+              <input class="aantal_kinderen" type="number" id="aantal_kinderen" name="aantal_kinderen" value="0" min="0" max="10" required>
+              <button type="button" onclick="increaseValue('aantal_kinderen')">+</button>
+            </div>
+          </div>
+    
+          <div class="form-row">
+            <label for="vegetarisch">Vegetarisch?</label>
+            <select class="vegetarisch" id="vegetarisch" name="vegetarisch" onchange="showVegetarischVoorkeur()">
+              <option value="ja">Ja</option>
+              <option value="nee" selected>Nee</option>
+            </select>
+          </div>
+    
+          <div id="vegetarischVoorkeur" style="display: none;">
+            <label for="vegetarisch_voorkeur">Voorkeur vegetarisch eten:</label>
+            <textarea class="vegetarisch_voorkeur" id="vegetarisch_voorkeur" name="vegetarisch_voorkeur" rows="6" cols="50" maxlength="500"></textarea>
+          </div>
+
+          <div id="totalPriceContainer">
+            <div id="totalPrice"></div>
+            <span class="tooltip">?</span>
+            <div class="tooltipText">
+              <p>KOSTEN BBQ - alles inbegrepen!</p>
+              <p>Volwassenen, kinderen vanaf 12 jaar: € 21,-</p>
+              <p>Kinderen van 6-12 jaar: € 14,-</p>
+              <p>Kinderen onder de 6 jaar: gratis</p>
+            </div>
+          </div>
+          
+          <div id="buttonContainer">
+            <input type="submit" value="Aanmelden" class="btn">
+          </div>
+        </form>
+      </section>
+
+      <script>
+        function calculateTotalPrice() {
+  const aantalVolwassenen = parseInt(document.querySelector('.aantal_volwassenen').value);
+  const aantalKinderen = parseInt(document.querySelector('.aantal_kinderen').value);
+
+  const prijsVolwassene = 21;
+  const prijsKind = 14;
+
+  const totaalPrijs = (aantalVolwassenen * prijsVolwassene) + (aantalKinderen * prijsKind);
+
+  return totaalPrijs;
+}
+
+function updateTotalPrice() {
+  const totaalPrijs = calculateTotalPrice();
+  let totalPriceElement = document.getElementById("totalPrice");
+  totalPriceElement.innerHTML = `Totale prijs:ㅤㅤㅤ ㅤ€${totaalPrijs}`;
+}
+
+// Roep de updateTotalPrice-functie aan wanneer de pagina wordt geladen
+window.addEventListener('load', updateTotalPrice);
+
+// Voeg een interval toe om de totale prijs elke 1 seconde bij te werken
+setInterval(updateTotalPrice, 100);
+      </script>
+
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+      <script>
+        let isFormSubmitted = false;
+
+function sendEmail(event) {
+  event.preventDefault(); // Voorkom dat het formulier wordt verzonden
+
+  if (isFormSubmitted) {
+    showPopup(`Je hebt je aanmelding al ingediend! Vorige aanmelding verkeerd gegaan? Neem dan contact op met <em>calanddrebbel@gmail.com</em>`);
+    return;
+  }
+
+  const voornaam = document.querySelector('.voornaam').value;
+  const achternaam = document.querySelector('.achternaam').value;
+  const email = document.querySelector('.email').value;
+  const straat = document.querySelector('.straat').value;
+  const huisnummer = document.querySelector('.huisnummer').value;
+  const aantal_volwassenen = document.querySelector('.aantal_volwassenen').value;
+  const aantal_kinderen = document.querySelector('.aantal_kinderen').value;
+  const vegetarisch = document.querySelector('.vegetarisch').value;
+  const vegetarisch_voorkeur = document.querySelector('.vegetarisch_voorkeur').value;
+  const totaal_bedrag = calculateTotalPrice(); // Functie om het totale bedrag te berekenen
+
+  const subject = `${voornaam} ${achternaam} heeft zich aangemeld voor de Calanddrebbel BBQ!`;
+
+  const vegetarischVoorkeurText = vegetarisch === "ja" ? `Vegetarisch voorkeur: ${vegetarisch_voorkeur}<br><br>` : `Vegetarisch voorkeur: <em>(niet ingevuld)</em><br><br>`;
+
+  const bodyText = `Er is een nieuwe aanmelding voor de Calanddrebbel BBQ!<br><br>
+Gegevens:<br>
+Voornaam: ${voornaam}<br>
+Achternaam: ${achternaam}<br>
+E-mail: ${email}<br>
+Adres: ${straat} ${huisnummer}<br>
+Aantal volwassenen: ${aantal_volwassenen}<br>
+Aantal kinderen: ${aantal_kinderen}<br>
+Vegetarisch: ${vegetarisch}<br>
+${vegetarischVoorkeurText}
+<strong>Aanmeldingsbon:</strong><br>
+Volwassenen, kinderen >12j: ${aantal_volwassenen}x (€21,00 per volwassene)<br>
+Totaalbedrag volwassenen: <strong>€${aantal_volwassenen * 21},00</strong><br><br>
+Kinderen 6-12 jaar: ${aantal_kinderen}x (€14,00 per kind)<br>
+Totaalbedrag kinderen: <strong>€${aantal_kinderen * 14},00</strong><br><br>
+Kinderen onder de 6 jaar: gratis<br><br>
+<em>Totaalbedrag:</em> <strong>€${totaal_bedrag},00</strong><br>
+<em>De klant moet dit bedrag overmaken naar het volgende rekeningnummer:</em><br>
+<em>NL46 KNAB 0725228016</em><br>
+<em>t.a.v. C. Rijnsburger.</em><br><br>
+<strong>Let op: de aanmelding is pas definitief nadat de betaling is ontvangen!</strong><br><br>`;
+
+  Email.send({
+    SecureToken : "ab304102-2320-481f-886a-b21b8857a573",
+    To : 'tijshollander33@gmail.com',
+    From : "noreplay.calanddrebbel.nl@gmail.com",
+    Subject: subject,
+    Body: bodyText
+  }).then(
+    message => {
+      if (message === "OK") {
+        showPopup("Bedankt voor je aanmelding! We hebben je gegevens ontvangen en gaan ermee aan de slag.");
+        isFormSubmitted = true;
+        setTimeout(() => {
+          isFormSubmitted = false;
+        }, 60000); // Cooldown van 1 minuut (60000 milliseconden)
+      } else {
+        showPopup("Er is een fout opgetreden... Probeer het later opnieuw!");
+      }
+      console.log(message);
+    }
+  );
+}
+
+function showPopup(message) {
+  const popup = document.getElementById("popup");
+  const popupMessage = document.getElementById("popup-message");
+  popupMessage.innerHTML = message;
+  popup.classList.add("show");
+}
+
+function closePopup() {
+  const popup = document.getElementById("popup");
+  popup.classList.remove("show");
+}
+
+        function showVegetarischVoorkeur() {
+          const vegetarisch = document.querySelector('.vegetarisch').value;
+          const vegetarischVoorkeur = document.getElementById('vegetarischVoorkeur');
+      
+          if (vegetarisch === 'ja') {
+            vegetarischVoorkeur.style.display = 'block';
+          } else {
+            vegetarischVoorkeur.style.display = 'none';
+          }
+        }
+      
+        function decreaseValue(inputName) {
+          const input = document.querySelector(`.${inputName}`);
+          if (input.value > 0) {
+            input.value--;
+          }
+        }
+      
+        function increaseValue(inputName) {
+          const input = document.querySelector(`.${inputName}`);
+          if (input.value < 10) {
+            input.value++;
+          }
+        }
+        document.querySelector('.btn').addEventListener('click', sendEmail);
+      </script>
+
+    <section class="aanmeldingen">
+        <p>ㅤㅤㅤ</p>
+        <p>ㅤㅤㅤ</p>
+        <p>ㅤㅤㅤ</p>
+      </div>
+      <div class="meer-img">
+        <img src="https://i.imgur.com/rYpNaO5.jpg" alt="BBQ">
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer1">
+    <p><a class="btn-footer" target="_blank">&copy; 2023 Calanddrebbel Straatfeest. Alle rechten voorbehouden</a></footer>
+</body>
+<script>
+const links = document.querySelectorAll('a[href^="#"]');
+
+links.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const id = this.getAttribute('data-target');
+
+    const target = document.getElementById(id);
+
+    const topOffset = target.getBoundingClientRect().top + window.pageYOffset;
+
+    window.scrollTo({
+      top: topOffset,
+      behavior: 'smooth'
+    });
+  });
+});
+</script>
+<script>
+  window.onload = function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
+</body>
+</html>
